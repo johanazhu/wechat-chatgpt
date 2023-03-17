@@ -153,7 +153,6 @@ export class ChatGPTBot {
     if (this.tiggerGPTMessage(rawText, privateChat)) {
       const text = this.cleanMessage(rawText, privateChat);
       if (privateChat) {
-        console.log('私聊')
         return await this.onPrivateMessage(talker, text);
       } else{
         if (!this.disableGroupMessage){
