@@ -3,8 +3,9 @@ import {config} from "./config.js";
 let apiKey = config.openai_api_key;
 let model = config.model;
 const sendMessage = async (message: string) => {
+  console.log('fetch', fetch)
   try {
-    const response = await fetch(`https://api.openai.com/v1/chat/completions`, {
+    const response = await fetch(`https://service-5lfbw1xe-1254022834.hk.apigw.tencentcs.com/v1/chat/completions`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${apiKey}`,

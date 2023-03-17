@@ -127,6 +127,7 @@ export class ChatGPTBot {
   async onPrivateMessage(talker: ContactInterface, text: string) {
     const talkerId = talker.id;
     const gptMessage = await this.getGPTMessage(text);
+    // console.log('gptMessage', gptMessage)
     await this.trySay(talker, gptMessage);
   }
 
@@ -152,6 +153,7 @@ export class ChatGPTBot {
     if (this.tiggerGPTMessage(rawText, privateChat)) {
       const text = this.cleanMessage(rawText, privateChat);
       if (privateChat) {
+        console.log('私聊')
         return await this.onPrivateMessage(talker, text);
       } else{
         if (!this.disableGroupMessage){
