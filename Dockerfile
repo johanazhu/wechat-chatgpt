@@ -1,4 +1,4 @@
-FROM node:19 AS app
+FROM node:18 AS app
 
 # We don't need the standalone Chromium
 RUN apt-get install -y wget \
